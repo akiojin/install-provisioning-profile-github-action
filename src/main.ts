@@ -24,10 +24,10 @@ async function Run()
 			throw new Error('base64 and path is null.')
 		}
 
-		const installDirectory = '~/Library/MobileDevice/Provisioning\ Profiles'
+		const installDirectory = `${process.env.HOME}/Library/MobileDevice/Provisioning\ Profiles`
 		const installPath = `${installDirectory}/${path.basename(pp).split('.')[0]}.mobileprovision`
 
-		core.info(`Create Directory=${installDirectory}`)
+		core.info(`mkdir: ${installDirectory}`)
 		await io.mkdirP(installDirectory)
 		core.info(`cp: ${pp} --> ${installPath}`)
 		await io.cp(pp, installPath)
