@@ -3,14 +3,14 @@ This action installs the provisioning profile in the environment and uninstalls 
 
 
 ## Usage
-### Simple usage - (1)
+### Simple usage - Specify Base64 encoded data in provisioning profile
 ```yml
 - uses: akiojin/install-provisioning-profile-github-action@v1.0
   with:
     base64: ${{ secrets.PROVISIONING_PROFILE_BASE64 }}
 ```
 
-### Simple usage - (2)
+### Simple usage - Specify the path to the provisioning profile
 ```yml
 - uses: akiojin/install-provisioning-profile-github-action@v1.0
   with:
