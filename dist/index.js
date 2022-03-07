@@ -6762,9 +6762,10 @@ function Run() {
                 throw new Error('base64 and path is null.');
             }
             const installDirectory = '~/Library/MobileDevice/Provisioning\ Profiles';
+            const installPath = `${installDirectory}/${path.basename(pp).split('.')[0]}.mobileprovision`;
             yield io.mkdirP(installDirectory);
-            yield io.cp(pp, installDirectory);
-            InstallPath.Set(`${installDirectory}/${path.basename(pp)}`);
+            yield io.cp(pp, installPath);
+            InstallPath.Set(installPath);
         }
         catch (ex) {
             core.setFailed(ex.message);
