@@ -27,7 +27,9 @@ async function Run()
 		const installDirectory = '~/Library/MobileDevice/Provisioning\ Profiles'
 		const installPath = `${installDirectory}/${path.basename(pp).split('.')[0]}.mobileprovision`
 
+		core.info(`Create Directory=${installDirectory}`)
 		await io.mkdirP(installDirectory)
+		core.info(`cp: ${pp} --> ${installPath}`)
 		await io.cp(pp, installPath)
 
 		InstallPath.Set(installPath)
@@ -39,7 +41,9 @@ async function Run()
 async function Cleanup()
 {
 	try {
-		await io.rmRF(InstallPath.Get())
+		const installPath = InstallPath.Get()
+		core.info(`rm: ${installPath}`)
+		await io.rmRF(installPath)
 	} catch (ex: any) {
 		core.setFailed(ex.message)
 	}

@@ -6763,7 +6763,9 @@ function Run() {
             }
             const installDirectory = '~/Library/MobileDevice/Provisioning\ Profiles';
             const installPath = `${installDirectory}/${path.basename(pp).split('.')[0]}.mobileprovision`;
+            core.info(`Create Directory=${installDirectory}`);
             yield io.mkdirP(installDirectory);
+            core.info(`cp: ${pp} --> ${installPath}`);
             yield io.cp(pp, installPath);
             InstallPath.Set(installPath);
         }
@@ -6775,7 +6777,9 @@ function Run() {
 function Cleanup() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            yield io.rmRF(InstallPath.Get());
+            const installPath = InstallPath.Get();
+            core.info(`rm: ${installPath}`);
+            yield io.rmRF(installPath);
         }
         catch (ex) {
             core.setFailed(ex.message);
