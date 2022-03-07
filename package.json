@@ -1,0 +1,42 @@
+{
+  "name": "install-provisioning-profile-github-action",
+  "version": "1.0.0",
+  "private": true,
+  "description": "This action ",
+  "main": "dist/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akiojin/install-provisioning-profile-github-action.git"
+  },
+  "keywords": [
+    "actions",
+    "node",
+    "setup",
+    "xcode"
+  ],
+  "author": "akiojin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/akiojin/install-provisioning-profile-github-action/issues"
+  },
+  "homepage": "https://github.com/akiojin/install-provisioning-profile-github-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "@actions/exec": "^1.1.0",
+    "@actions/github": "^5.0.0",
+    "@actions/io": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "@types/tmp": "^0.2.3",
+    "@types/uuid": "^8.3.4",
+    "tmp": "^0.2.1"
+  }
+}
