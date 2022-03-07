@@ -25,4 +25,5 @@ jobs:
         run: npm install
 
       - uses: ./
-        base64: ${{ secrets.DEVELOPMENT_PROVISIONING_PROFILE_BASE64 }}
+        with:
+          base64: ${{ secrets.DEVELOPMENT_PROVISIONING_PROFILE_BASE64 }}
