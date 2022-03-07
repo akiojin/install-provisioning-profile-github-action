@@ -2,11 +2,11 @@ name: 'install-provisioning-profile-github-action'
 description: 'This action installs the provisioning profile in the environment and uninstalls it at the end of the workflow.'
 inputs:
   base64:
-    description: 'Base64-encoded data for the provisioning profile used. May be omitted if 'path' is specified. If 'path' is also specified, this parameter takes precedence.'
+    description: 'Base64-encoded data for the provisioning profile used. May be omitted if "path" is specified. If "path" is also specified, this parameter takes precedence.'
     required: false
     default: ''
   path:
-    description: 'Path of the provisioning profile to be used. If 'base64' is not specified, this parameter cannot be omitted.'
+    description: 'Path of the provisioning profile to be used. If "base64" is not specified, this parameter cannot be omitted.'
     required: false
     default: ''
 runs:
